@@ -10,6 +10,24 @@ import ("fmt")
 // 	Price float64 `json:"price,omitempty"`
 // }
 
+type Shape interface {
+	Area() float64
+	Perimeter() float64
+}
+
+type Rect struct {
+	width float64
+	height float64
+}
+
+func (r Rect) Area() float64 {
+	return r.width * r.height
+}
+
+func (r Rect) Perimeter() float64 {
+	return 2 * (r.width + r.height)
+}
+
 func main(){
 // var num1,num2 int64
 // // var num3,num4 float64
@@ -75,23 +93,32 @@ func main(){
 		// // fmt.Printf("%+v\n", book)
 		// fmt.Println(data2)
 		// fmt.Printf("%+v\n", data3)
-		myFunction()
-		myFunction2("Hello")
-		myFunction3("test Function")
-		data := myFunction3("return func3")
-		fmt.Println(data)
+		// myFunction()
+		// myFunction2("Hello")
+		// myFunction3("test Function")
+		// data := myFunction3("return func3")
+		// fmt.Println(data)
+
+		var s Shape
+		s = Rect{5.0,4.0}
+		r := Rect{5.0,4.0}
+
+		fmt.Printf("type of s is %T\n", s)
+		fmt.Printf("value of s is %v\n", s)
+		fmt.Println("area of rectangle s",s.Area())
+		fmt.Println("s == r is", s == r)
 
 }
 
-func	myFunction() {
-	fmt.Println("My function")
-}
+// func	myFunction() {
+// 	fmt.Println("My function")
+// }
 
-func	myFunction2(str string) {
-	fmt.Println("My function2", str)
-}
+// func	myFunction2(str string) {
+// 	fmt.Println("My function2", str)
+// }
 
-func myFunction3(str string) string {
-	data := fmt.Sprintf("%s", str)
-	return data
-}
+// func myFunction3(str string) string {
+// 	data := fmt.Sprintf("%s", str)
+// 	return data
+// }
