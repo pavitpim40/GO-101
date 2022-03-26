@@ -1,15 +1,14 @@
 package main
 
-import ("fmt"
-"encoding/json")
+import ("fmt")
 
 
-type Book struct {
-	Title string `json:"title"`
-	Name string `json:"name"`
-	Author string `json:"author"`
-	Price float64 `json:"price,omitempty"`
-}
+// type Book struct {
+// 	Title string `json:"title"`
+// 	Name string `json:"name"`
+// 	Author string `json:"author"`
+// 	Price float64 `json:"price,omitempty"`
+// }
 
 func main(){
 // var num1,num2 int64
@@ -66,14 +65,33 @@ func main(){
 	// 	i++
 	// }
 	
-		data := `{"Title" : "anime" , "Name" : "Harry Potter and the Philosopher's Stone", "Author" : "J.K. Rowling", "Price" : "10.00"}`
-		var book Book
-		data2 := Book{"","","",500}
-		data3 :=[]Book{{"","","",0},{"","","",0},{"","","",0}}
-		json.Unmarshal([]byte(data), &book)
+		// data := `{"Title" : "anime" , "Name" : "Harry Potter and the Philosopher's Stone", "Author" : "J.K. Rowling", "Price" : "10.00"}`
+		// var book Book
+		// data2 := Book{"","","",500}
+		// data3 :=[]Book{{"","","",0},{"","","",0},{"","","",0}}
+		// json.Unmarshal([]byte(data), &book)
 		
-		// fmt.Println(book)
-		// fmt.Printf("%+v\n", book)
-		fmt.Println(data2)
-		fmt.Printf("%+v\n", data3)
+		// // fmt.Println(book)
+		// // fmt.Printf("%+v\n", book)
+		// fmt.Println(data2)
+		// fmt.Printf("%+v\n", data3)
+		myFunction()
+		myFunction2("Hello")
+		myFunction3("test Function")
+		data := myFunction3("return func3")
+		fmt.Println(data)
+
+}
+
+func	myFunction() {
+	fmt.Println("My function")
+}
+
+func	myFunction2(str string) {
+	fmt.Println("My function2", str)
+}
+
+func myFunction3(str string) string {
+	data := fmt.Sprintf("%s", str)
+	return data
 }
