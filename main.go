@@ -1,6 +1,15 @@
 package main
 
-import ("fmt")
+import ("fmt"
+"encoding/json")
+
+
+type Book struct {
+	Title string `json:"title"`
+	Name string `json:"name"`
+	Author string `json:"author"`
+	Price float64 `json:"price,omitempty"`
+}
 
 func main(){
 // var num1,num2 int64
@@ -47,13 +56,24 @@ func main(){
 	// 	fmt.Println(i,v)
 	// }
 
-	var num int64
-	fmt.Print("Enter Num")
-	fmt.Scanf("%d", &num)
+	// var num int64
+	// fmt.Print("Enter Num")
+	// fmt.Scanf("%d", &num)
 
-	var i int64 = 1 
-	for i <= 12{
-		fmt.Printf("%d * %d = %d\n", num, i, num*i)
-		i++
-	}
+	// var i int64 = 1 
+	// for i <= 12{
+	// 	fmt.Printf("%d * %d = %d\n", num, i, num*i)
+	// 	i++
+	// }
+	
+		data := `{"Title" : "anime" , "Name" : "Harry Potter and the Philosopher's Stone", "Author" : "J.K. Rowling", "Price" : "10.00"}`
+		var book Book
+		data2 := Book{"","","",500}
+		data3 :=[]Book{{"","","",0},{"","","",0},{"","","",0}}
+		json.Unmarshal([]byte(data), &book)
+		
+		// fmt.Println(book)
+		// fmt.Printf("%+v\n", book)
+		fmt.Println(data2)
+		fmt.Printf("%+v\n", data3)
 }
