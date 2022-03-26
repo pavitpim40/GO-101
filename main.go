@@ -20,22 +20,27 @@ func main(){
 // fmt.Printf("%.2f", num3)
 
 // Condition 
+	// var point float64
+	// fmt.Print("Input point: ")
+	// fmt.Scanf("%f", &point);
 
-	var point float64
-	fmt.Print("Input point: ")
-	fmt.Scanf("%f", &point);
+	// if point >= 80 {
+	// 	fmt.Println("A")	
+	// } else if point >= 70 {
+	// 	fmt.Println("B")
+	// } else if point >= 60 {
+	// 	fmt.Println("C")
+	// } else if point >= 50 {
+	// 	fmt.Println("D")
+	// } else if point < 0 {
+	// 	fmt.Println("Invalid point")
+	// } else {
+	// 	fmt.Println("F")
+	// }
 
-	if point >= 80 {
-		fmt.Println("A")	
-	} else if point >= 70 {
-		fmt.Println("B")
-	} else if point >= 60 {
-		fmt.Println("C")
-	} else if point >= 50 {
-		fmt.Println("D")
-	} else if point < 0 {
-		fmt.Println("Invalid point")
-	} else {
-		fmt.Println("F")
+	// Loop
+	num := []string{"a","b","c"}
+	for i, v := range num {
+		fmt.Println(i,v)
 	}
 }
