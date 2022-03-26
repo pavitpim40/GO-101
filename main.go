@@ -39,13 +39,21 @@ func main(){
 	// }
 
 	// Loop
-	num := []string{"a","b","c"}
-	num = append(num, "z")
-	num2 := []string{"D","E","F"}
-	num = append(num, num2...)
-	for i, v := range num {
-		fmt.Println(i,v)
+	// num := []string{"a","b","c"}
+	// num = append(num, "z")
+	// num2 := []string{"D","E","F"}
+	// num = append(num, num2...)
+	// for i, v := range num {
+	// 	fmt.Println(i,v)
+	// }
+
+	var num int64
+	fmt.Print("Enter Num")
+	fmt.Scanf("%d", &num)
+
+	var i int64 = 1 
+	for i <= 12{
+		fmt.Printf("%d * %d = %d\n", num, i, num*i)
+		i++
 	}
-
-
 }
