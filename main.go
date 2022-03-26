@@ -40,7 +40,12 @@ func main(){
 
 	// Loop
 	num := []string{"a","b","c"}
+	num = append(num, "z")
+	num2 := []string{"D","E","F"}
+	num = append(num, num2...)
 	for i, v := range num {
 		fmt.Println(i,v)
 	}
+
+
 }
